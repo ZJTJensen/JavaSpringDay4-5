@@ -1,6 +1,6 @@
 package com.project.questions.repositories;
 
-import com.project.questions.controllers.Answer;
+import com.project.questions.models.Answer;
 import java.util.List;
 
 import org.springframework.data.jpa.repository.Query;

@@ -27,7 +27,7 @@ public class Answer{
 	@GeneratedValue
 	private long id;
 	@Size(min = 5, max = 200)
-	private String answer;
+	private String text;
 
 	// Member variables and annotations go here.
 	
@@ -74,13 +74,20 @@ public class Answer{
 	/**
 	 * @return the answer
 	 */
-	public String getAnswer() {
-		return answer;
+	public String getText() {
+		return text;
 	}
 	/**
 	 * @param answer the answer to set
 	 */
-	public void setAnswer(String answer) {
-		this.answer = answer;
+	public void setText(String text) {
+		this.text = text;
+	}
+	public Answer(String text) {
+		super();
+		this.text = text;
+	}
+	public void setQuestion(Question question) {
+		this.question = question;
 	}
 }

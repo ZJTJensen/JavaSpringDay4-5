@@ -47,7 +47,20 @@ public class Tag{
         joinColumns = @JoinColumn(name = "tag_id"), 
         inverseJoinColumns = @JoinColumn(name = "question_id")
     )
-    private List<Question> questions;
+	private List<Question> questions;
+
+	public List<Question> getQuestion() {
+		return questions;
+    }
+    
+	public void setQuestion(List<Question> question) {
+		this.questions = question;
+	}
+	
+	public Tag(String subject) {
+		super();
+		this.subject = subject;
+	}
 	
 	public long getId() {
 		return id;

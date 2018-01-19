@@ -26,7 +26,7 @@ public class Question{
 	@GeneratedValue
 	private long id;
 	@Size(min = 5, max = 200)
-	private String question;
+	private String text;
 
 	// Member variables and annotations go here.
 	
@@ -50,7 +50,15 @@ public class Question{
         joinColumns = @JoinColumn(name = "question_id"), 
         inverseJoinColumns = @JoinColumn(name = "tag_id")
     )
-    private List<Tag> tags;
+	private List<Tag> tags;
+	
+	public List<Tag> getTag() {
+		return tags;
+    }
+    
+	public void setTag(List<Tag> tag) {
+		this.tags = tag;
+	}
 
 	public long getId() {
 		return id;
@@ -80,13 +88,19 @@ public class Question{
 	/**
 	 * @return the question
 	 */
-	public String getQuestion() {
-		return question;
+	public String getText() {
+		return text;
 	}
 	/**
 	 * @param question the question to set
 	 */
-	public void setQuestion(String question) {
-		this.question = question;
+	public void setText(String question) {
+		this.text = question;
+	}
+	public void setAnswers(List<Answer> answers) {
+		this.answers = answers;
+	}
+	public List<Answer> getAnswers(){
+		return answers;
 	}
 }
